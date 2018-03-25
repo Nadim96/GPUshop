@@ -17,7 +17,7 @@
 			 <img style="min-height: 325px; max-height:325px"src="{{url('afbeeldingen', $gpu->afbeelding)}}" alt="" heigh/>
 		     <div class="bike-cost">
 					 <div class="bike-mdl">
-						 <h4><center>{{$gpu->naam}} </center></h4>
+						 <h4><center>{{$gpu->naam}}</center></h4>
 					 </div>
 					 <div class="bike-cart">	
 					 	<div>
