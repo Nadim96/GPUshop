@@ -11,6 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', 'FrontController@index')->name('home');
+
+Route::get('/gpus', 'FrontController@gpus')->name('gpus');
+
+Route::get('/gpu', 'FrontController@gpu')->name('gpu');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
