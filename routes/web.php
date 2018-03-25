@@ -19,4 +19,10 @@ Route::get('/gpu', 'FrontController@gpu')->name('gpu');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index');
+
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
+	Route::get('/', function(){
+		return view('admin.index');
+	})->name('admin.index');
+});
