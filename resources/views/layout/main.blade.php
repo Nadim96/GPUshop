@@ -119,9 +119,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					  </div>
 				  </div>
 	 </div>
-	 <div class="dwn">
-		<a class="scroll" href="#cate"><img src="images/scroll.png" alt=""/></a>
-	 </div>		
 	 
 	@endif		 
 </div>

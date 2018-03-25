@@ -2,47 +2,23 @@
 
 @section('content')
 
-    <h3>Products</h3>
+    <h3>Product toevoegen</h3>
 
-<ul class="container">
-    @forelse($products as $product)
-    <li class="row">
-
-
-       <div class="col-md-8">
-        <h4>Name of product:{{$product->name}}</h4>
-        <h4>Category:{{count($product->category)?$product->category->name:"N/A"}}</h4>
-        @foreach ($product->images as $image)
-          
-          <img src="{{$image->image_path}}" style="max-width: 100px">
-  
-        @endforeach
-      <a href="{{route('product.edit',$product->id)}}" class="btn btn-primary btn-sm ">Edit Product</a>
-      <br>
-
-        <form action="{{route('product.destroy',$product->id)}}"  method="POST">
-           {{csrf_field()}}
-           {{method_field('DELETE')}}
-           <input class="btn btn-sm btn-danger" type="submit" value="Delete">
-         </form>
-
-         <div class="col-md-4">
+    
+        @forelse($products as $product)
+                  
+        <div>
             
-            <form action="/admin/product/image-upload/{{$product->id}}" method="POST" class="dropzone" id="my-awesome-dropzone-{{$product->id}}">
-              {{csrf_field()}}
-
-             </form>
-
+            <img style="min-height:300px; max-height:325px; "src="{{@url('afbeeldingen', $product->afbeelding)}}" alt=""/>
+            <h4>Naam <span>{{$product->naam}}</span></h4>
         </div>
 
-    </li>
+             @empty
 
-        @empty
+             <h3>Geen producten</h3>
 
-        <h3>No products</h3>
+        @endforelse
 
-    @endforelse
-</ul>
 
 
 @endsection

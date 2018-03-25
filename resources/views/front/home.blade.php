@@ -2,32 +2,10 @@
 
 @section('content')
 
-<div id="cate" class="categories">
-	 <div class="container">
-		 <h3>CATEGORIES</h3>
-		 <div class="categorie-grids">
-			 <a href="bicycles.html"><div class="col-md-4 cate-grid grid1">
-				 <h4>FIXED / SINGLE SPEED</h4>
-				 <p>Are you ready for the 27.5 Revloution ?</p>
-				 <a class="store" href="bicycles.html">GO TO STORE</a>
-			 </div></a>
-			 <a href="bicycles.html"><div class="col-md-4 cate-grid grid2">
-				 <h4>PREMIMUM SERIES</h4>
-				 <p>Exclusive Bike Components</p>
-				 <a class="store" href="bicycles.html">GO TO STORE</a>
-			 </div></a>
-			 <a href="bicycles.html"><div class="col-md-4 cate-grid grid3">
-				 <h4>CITY BIKES</h4>
-				 <p>Street Playground</p>
-				 <a class="store" href="bicycles.html">GO TO STORE</a>
-			 </div></a>
-			 <div class="clearfix"></div>
-		 </div>
-	 </div>
-</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <!--bikes-->
 <div class="bikes">	
-		 <h3>POPULAR BIKES</h3>
+		 <center><h3>Best Verkocht</h3><br><i class="fa fa-arrow-down" style="font-size:24px"></i></center>
 		 <div class="bikes-grids">			 
 			 <ul id="flexiselDemo1">
 				 <li>

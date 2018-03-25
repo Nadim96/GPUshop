@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Product;
+
 class FrontController extends Controller
 {
     public function index()
@@ -13,7 +15,8 @@ class FrontController extends Controller
 
     public function gpus()
     {
-    	return view('front.gpus');
+        $gpus = Product::all();
+    	return view('front.gpus',compact('gpus'));
     }
 
     public function gpu()

@@ -12,8 +12,8 @@
                 </a>
                 <!-- Sub menu -->
                 <ul>
-                    <li><a href="">Products</a></li>
-                    <li><a href="">Add Product</a></li>
+                    <li><a href="/admin/product">Products</a></li>
+                    <li><a href="/admin/product/create">Add Product</a></li>
                    
                 </ul>
             </li>

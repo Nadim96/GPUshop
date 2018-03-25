@@ -472,7 +472,7 @@ select{
 	display:block;
 }
 .bike:hover{
-	background:#fcff19;
+	background:#ededed;
 }
 .bike img{	
 	width:100%;
@@ -485,8 +485,8 @@ select{
 	 text-align:center;
 }
 .bike-cost{
+	position: relative;
 	background:#b7b7b7;
-	padding:10px 1em;
 }
 .bike-mdl{
 	float:left;
@@ -503,7 +503,9 @@ select{
 	font-size:0.8em;
 }
 .bike-cart{
-	float:left;
+	position: relative;
+	float:right;
+	bottom: 10px;
 	width:60%;
 	text-align:right;
 }
