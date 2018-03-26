@@ -3,12 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
-use App\Category;
+use Gloudemans\Shoppingcart\Facades\Cart;
 use App\Product;
-use DB;
+use App\Category;
 
-class CategoriesController extends Controller
+class CartController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,9 +16,12 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        $categorieen = Category::all();
-        $allProducts = Product::all();
-        return view('admin.category.index', compact('categorieen', 'allProducts'));
+        $cartItems = Cart::content();
+
+        $cartIds = $cartItems->pluck('id')->toArray();
+        $afbeeldingenCart = Product::find($cartIds);
+
+        return view('cart.index',compact(['cartItems', 'afbeeldingenCart']));
     }
 
     /**
@@ -40,8 +42,7 @@ class CategoriesController extends Controller
      */
     public function store(Request $request)
     {
-        Category::create($request->all());
-        return back();
+        //
     }
 
     /**
@@ -52,10 +53,7 @@ class CategoriesController extends Controller
      */
     public function show($id)
     {
-        $products = Category::find($id)->products;
-        $categoriesNaam = Category::where('id', $id)->get();
-        $categorieen = Category::all();
-        return view('admin.category.index', compact(['categorieen','products', 'categoriesNaam']));
+        //
     }
 
     /**
@@ -66,7 +64,10 @@ class CategoriesController extends Controller
      */
     public function edit($id)
     {
-        //
+       
+        $product = Product::find($id);
+        Cart::add($id, $product->naam, 1, $product->prijs);
+        return back();
     }
 
     /**
@@ -78,7 +79,25 @@ class CategoriesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        if($request->removeItem){
+            $rowId = $request->rowId;
+            Cart::remove($rowId);
+            return back();
+        }
+        else{
+
+        $qty = $request->qty;
+        $proId = $request->proId;
+        $rowId = $request->rowId;
+
+        Cart::update($rowId, $qty);
+
+        $cartItems = Cart::content();
+
+        return view('cart.upCart', compact('cartItems'));
+
+        }
+
     }
 
     /**
@@ -89,6 +108,7 @@ class CategoriesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Cart::destroy();
+        return back();
     }
 }

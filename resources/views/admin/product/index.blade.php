@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <h3>Product toevoegen</h3>
+    <h3>Producten</h3>
 
     
         @forelse($products as $product)

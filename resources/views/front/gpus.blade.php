@@ -1,4 +1,3 @@
-
 @extends('layout.main')
 
 @section('title', 'Graphic cards')
@@ -12,8 +11,7 @@
 
 		@forelse($gpus as $gpu)
 
-
-		 <a href="single.html"><div class="bike">				 
+		 <a href="{{route('gpu')}}"><div class="bike">				 
 			 <img style="min-height: 325px; max-height:325px"src="{{url('afbeeldingen', $gpu->afbeelding)}}" alt="" heigh/>
 		     <div class="bike-cost">
 					 <div class="bike-mdl">
@@ -21,9 +19,9 @@
 					 </div>
 					 <div class="bike-cart">	
 					 	<div>
-						 	<br><h3 style="text-align:right; margin-right: 5px;">€{{$gpu->prijs}}</h3><br>
+						 	<br><h3 style="text-align:right; margin-right: 5px;">€{{$gpu->prijs}}</h3> Excl. btw<br><br>
 						 	</div>
-						 <a class="buy" href="single.html">  In winkelmand</a>
+						 <a class="buy" href="{{route('cart.edit',$gpu->id)}}">In winkelmand</a>
 					 </div><br>
 					 <div class="bike-mdl" style="border-top:1px solid black">
 					 	@if(strlen($gpu->beschrijving) > 96)
@@ -49,7 +47,6 @@
 			<h3>Geen producten gevonden</h3>
 		
 	
-
 		@endforelse
 			
 	<div class="clearfix"></div>

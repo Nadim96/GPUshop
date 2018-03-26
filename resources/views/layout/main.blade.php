@@ -99,7 +99,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<li><a href="404.html">TRUCK GRIP</a></li>
 							  </ul>
 						 </li>
-						  <a class="shop" href="cart.html"><img src="images/cart.png" alt=""/></a>
+						  <a class="shop" href="{{route('cart.index')}}"><img src="images/cart.png" alt=""/><tagname style="color:white;"> {{Cart::count()}}</p></a>
 					  </ul>
 				 </div>
 				 <div class="clearfix"></div>

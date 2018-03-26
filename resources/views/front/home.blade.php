@@ -19,7 +19,7 @@
 							 <h4>{{$gpu->naam}}<span>€{{$gpu->prijs}}</span></h4>							 
 						 </div>
 						 <div class="model-info">
-							 <a href="bicycles.html">Koop</a>
+							 <a href="{{route('cart.edit',$gpu->id)}}">IN WINKELMAND</a>
 						 </div>			
 
 						 <div class="clearfix"></div>

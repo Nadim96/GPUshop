@@ -18,6 +18,10 @@ Auth::routes();
 Route::get('/logout', 'Auth\LoginController@logout');
 
 Route::get('/home', 'HomeController@index');
+Route::resource('/cart', 'CartController');
+Route::get('/cart/update/{id}', 'CartController@update');
+Route::get('/cart/update/{rowId}/{removeItem}', 'CartController@update');
+Route::get('/cart/destroy/{rowId}', 'CartController@destroy');
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
 	Route::get('/', function(){
