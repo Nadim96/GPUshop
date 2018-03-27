@@ -23,11 +23,24 @@ Route::get('/cart/update/{id}', 'CartController@update');
 Route::get('/cart/update/{rowId}/{removeItem}', 'CartController@update');
 Route::get('/cart/destroy/{rowId}', 'CartController@destroy');
 
+
+Auth::routes();
+
+
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
+	
 	Route::get('/', function(){
-		return view('admin.index');
+		if(Auth::user()->admin == 1){
+			return view('admin.index');
+		}else{
+			return view('home');
+		}
 	})->name('admin.index');
 
 	Route::resource('product', 'ProductsController');
 	Route::resource('category', 'CategoriesController');
 });
+
+Route::resource('address', 'AdressController');
+Route::get('/checkout', 'CheckoutController@step1');
+Route::get('/shipping-info', 'CheckoutController@shipping')->name('checkout.shipping');

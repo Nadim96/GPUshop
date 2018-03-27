@@ -5,6 +5,7 @@
 	@yield('title','GPUshop')
 </title>
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+
 <!-- jQuery (Bootstrap's JavaScript plugins) -->
 <script src="js/jquery.min.js"></script>
 <!-- Custom Theme files -->

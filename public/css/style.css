@@ -28,6 +28,21 @@ ul{
 margin:0;
 padding:0;
 }
+
+.content-box, .content-box-large {
+    margin-bottom: 30px;
+    background: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    border-left: 1px solid #eee;
+    border-top: 1px solid #eee;
+    border-right: 2px solid #eee;
+    border-bottom: 2px solid #eee;
+}
+
+.content-box-large {
+    padding: 20px;
+}
 /*----*/
 .banner-bg1{
 	background:url(../images/bg.jpg) no-repeat;
@@ -1128,7 +1143,6 @@ p.qty {
 }
 .form-control {
   display: inline-block;
-  width: 13%;
 }
 .cart h2{
 	font-size:1.5em;
@@ -2232,4 +2246,5 @@ a.order{
 .none2{
 	display:none;
 }
+
 }

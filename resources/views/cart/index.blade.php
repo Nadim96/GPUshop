@@ -3,7 +3,6 @@
 
 @section('content')
 
-
 <div id="updateDiv">
 <script>
 
@@ -71,7 +70,7 @@ $(document).ready(function(){
 								 <input type="hidden" id="rowId{{$cartItem->id}}" value="{{$cartItem->rowId}}">
 								 <input type="hidden" id="proId{{$cartItem->id}}" value="{{$cartItem->id}}">
 
-								 <input min="1" type="number" id="upCart{{$cartItem->id}}" name="quantity" value="{{$cartItem->qty}}" class="form-control input-small">
+								 <input min="1" type="number" id="upCart{{$cartItem->id}}" name="quantity" value="{{$cartItem->qty}}" class="form-control input-small" style="width:10%;">
 									
 								 <h2 style="display:inline-block;float:right;margin-top:20px;">Totaal: €{{$cartItem->subtotal(2,',')}}</p>
 
@@ -106,7 +105,7 @@ $(document).ready(function(){
 				 <h4 class="last-price">Totaal</h4>
 				 <span class="total final">€{{Cart::total()}}</span>
 				 <div class="clearfix"></div>
-				 <a class="order" href="#">Plaats bestelling</a>
+				 <a class="order" href="{{url('/checkout')}}">Plaats bestelling</a>
 				</div>
 		 </div>
 </div>
