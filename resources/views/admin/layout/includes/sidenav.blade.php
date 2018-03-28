@@ -29,6 +29,19 @@
                    
                 </ul>
             </li>
+
+              <li class="submenu">
+                <a href="#">
+                    <i class="glyphicon glyphicon-list"></i> Bestellingen
+                    <span class="caret pull-right"></span>
+                </a>
+                <!-- Sub menu -->
+                <ul>
+                    <li><a href="{{url('admin/orders/pending')}}">Bestellingen in behandeling</a></li>
+                    <li><a href="{{url('admin/orders/delivered')}}">Bestellingen afgerond</a></li>
+                    <li><a href="{{url('admin/orders')}}">Alle Bestellingen</a></li>
+                </ul>
+            </li>
             
         </ul>
     </div>

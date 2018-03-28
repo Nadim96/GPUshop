@@ -100,7 +100,13 @@ $(document).ready(function(){
 				 <h4 class="last-price">Totaal</h4>
 				 <span class="total final">€{{Cart::total()}}</span>
 				 <div class="clearfix"></div>
-				 <a class="order" href="{{url('/checkout')}}">Plaats bestelling</a>
+
+				 @if(Cart::count() <= 0)
+				 <a class="order" href="{{route('checkout.shipping')}}" style="pointer-events: none; cursor: default;">Plaats bestelling</a>
+				 @else
+ 					<a class="order" href="{{route('checkout.shipping')}}"disabled>Plaats bestelling</a>
+				 @endif
+				
 				</div>
 		 </div>
 </div>

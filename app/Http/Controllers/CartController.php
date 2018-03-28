@@ -20,7 +20,6 @@ class CartController extends Controller
 
         $cartIds = $cartItems->pluck('id')->toArray();
         $afbeeldingenCart = Product::find($cartIds);
-
         return view('cart.index',compact(['cartItems', 'afbeeldingenCart']));
     }
 

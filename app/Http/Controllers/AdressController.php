@@ -39,9 +39,12 @@ class AdressController extends Controller
     {
         $this->validate($request,[
             'huisnummer'=>'integer',
+            ['huisnummer.integer' => 'this is my custom error message for required']
         ]);
 
         Address::create($request->all());
+
+        return redirect()->route('checkout.saveOrder');
         
     }
 

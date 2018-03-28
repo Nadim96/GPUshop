@@ -28,6 +28,7 @@ Auth::routes();
 
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
+	Route::post('toggledeliver/{orderId}', 'OrderController@toggleDeliver')->name('toggle.deliver');
 	
 	Route::get('/', function(){
 		if(Auth::user()->admin == 1){
@@ -39,8 +40,17 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
 
 	Route::resource('product', 'ProductsController');
 	Route::resource('category', 'CategoriesController');
+	Route::get('orders/{type?}', 'OrderController@orders');
+
+
+});
+
+
+Route::group(['middleware' => 'auth'], function(){
+	Route::get('/shipping-info', 'CheckoutController@shipping')->name('checkout.shipping');
 });
 
 Route::resource('address', 'AdressController');
-Route::get('/checkout', 'CheckoutController@step1');
-Route::get('/shipping-info', 'CheckoutController@shipping')->name('checkout.shipping');
+Route::get('/saveOrder', 'CheckoutController@saveOrder')->name('checkout.saveOrder');
+
+//Route::get('/checkout', 'CheckoutController@step1');
