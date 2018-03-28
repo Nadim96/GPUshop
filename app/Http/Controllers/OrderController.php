@@ -4,9 +4,24 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Order;
+use Auth;
 
 class OrderController extends Controller
 {
+
+	public function mijnBestellingen(){
+
+		if(Auth::check()){
+			$orders = Order::where('user_id', Auth::user()->id)->get();
+			return view('orders.index',compact('orders'));
+		}else{
+			return('auth.login');
+		}
+
+	}
+	
+
+
     public function orders($type=''){
     
     	if($type == 'pending'){

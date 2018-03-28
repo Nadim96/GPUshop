@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Auth;
 use App\Order;
 use App\User;
+use App\Address;
 use Cart;
 
 class CheckoutController extends Controller
@@ -23,7 +24,17 @@ class CheckoutController extends Controller
     {
     	$name = Auth::user()->name;
     	$email = Auth::user()->email;
-    	return view('front.shipping-info', compact('name', 'email'));
+
+
+        $userAddress = Address::where('user_id', Auth::user()->id)->orderBy('created_at', 'desc')->first();
+
+        if(!empty($userAddress)){
+          return view('front.shipping-info', compact('name', 'email', 'userAddress'));
+        }else{
+            return view('front.shipping-info', compact('name', 'email'));
+
+        }
+
     }
 
 

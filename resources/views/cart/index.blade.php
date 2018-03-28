@@ -43,7 +43,7 @@ $(document).ready(function(){
 	<div class="cart">
 		 <div class="container">
 			 <div class="cart-top">
-				<a href="index.html">home</a>
+				<a href="/">HOME ::</a>
 			 </div>	
 			 <div class="col-md-9 cart-items">
 				 <h2>Mijn winkelmandje ({{Cart::count()}}) <a href="{{url('cart/destroy', 1)}}" style="color:#337ab7;display:inline-block;float:right;">Winkelmand Legen</a></h2>  

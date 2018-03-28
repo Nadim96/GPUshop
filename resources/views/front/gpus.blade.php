@@ -11,7 +11,7 @@
 
 		@forelse($gpus as $gpu)
 
-		 <a href="{{route('gpu')}}"><div class="bike">				 
+		 <a href="{{route('gpu', $gpu->id)}}"><div class="bike">				 
 			 <img style="min-height: 325px; max-height:325px"src="{{url('afbeeldingen', $gpu->afbeelding)}}" alt="" heigh/>
 		     <div class="bike-cost">
 					 <div class="bike-mdl">
@@ -19,8 +19,9 @@
 					 </div>
 					 <div class="bike-cart">	
 					 	<div>
-						 	<br><h3 style="text-align:right; margin-right: 5px;">€{{$gpu->prijs}}</h3> Excl. btw<br><br>
 						 	</div>
+						 	<br><h3 style="text-align:right; margin-right: 5px;">€{{$gpu->prijs}}</h3>Excl. btw<br><br>
+
 						 <a class="buy" href="{{route('cart.edit',$gpu->id)}}">In winkelmand</a>
 					 </div><br>
 					 <div class="bike-mdl" style="border-top:1px solid black">
@@ -37,7 +38,7 @@
 					 <div class="clearfix"></div>
 				 </div>
 				 <div class="fast-viw">
-						<a href="{{route('gpu')}}">Bekijk</a>
+						<a href="{{route('gpu', $gpu->id)}}">Bekijk</a>
 				 </div>
 			 </div></a>
 			

@@ -26,7 +26,7 @@
 
 					 </div>
 					 <div class="viw">
-						<a href="{{route('gpu')}}">Bekijk</a>
+						<a href="{{route('gpu', $gpu->id)}}">Bekijk</a>
 					 </div>
 
 					 @empty

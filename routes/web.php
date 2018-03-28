@@ -13,7 +13,7 @@
 
 Route::get('/', 'FrontController@index')->name('home');
 Route::get('/gpus', 'FrontController@gpus')->name('gpus');
-Route::get('/gpu', 'FrontController@gpu')->name('gpu');
+Route::get('/gpu/{productId?}', 'FrontController@gpu')->name('gpu');
 Auth::routes();
 Route::get('/logout', 'Auth\LoginController@logout');
 
@@ -46,8 +46,13 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
 });
 
 
+
 Route::group(['middleware' => 'auth'], function(){
 	Route::get('/shipping-info', 'CheckoutController@shipping')->name('checkout.shipping');
+});
+
+Route::group(['middleware' => 'auth'], function(){
+	Route::get('/bestellingen', 'OrderController@mijnBestellingen');
 });
 
 Route::resource('address', 'AdressController');

@@ -13,8 +13,7 @@
 
     <ul>
 
-    	@foreach($orders as $order)
-
+    	@forelse($orders as $order)
 
     	@if(isset($delivered))
     		@if($order->delivered == 1)
@@ -30,6 +29,9 @@
 		    		<input type="hidden" value="1" name="delivered">
 					<input type="submit" class="btn btn-default" value="Markeer als bezorgd"></submit>
 		    	</form>
+
+
+
   		@endif
 
 
@@ -57,8 +59,11 @@
     				@endforeach
     		</tr>
     	</table>
+
+        @empty
+        <h3>Geen bestellingen</h3>
     		
-    	@endforeach
+    	@endforelse
     </ul>
 
 @endsection

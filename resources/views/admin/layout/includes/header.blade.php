@@ -4,7 +4,7 @@
             <div class="col-md-5">
                 <!-- Logo -->
                 <div class="logo">
-                    <h1><a href="{{route('admin.index')}}">Admin</a></h1>
+                    <h1><a href="{{url('/')}}">Home</a></h1>
                 </div>
             </div>
 
@@ -16,8 +16,7 @@
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{Auth::user()->name}} <b
                                             class="caret"></b></a>
                                 <ul class="dropdown-menu animated fadeInUp">
-                                    <li><a href="{{url('/')}}">Front End</a></li>
-                                    <li><a href="{{url('/logout')}}">Logout</a></li>
+                                    <li><a href="{{url('/logout')}}">Uitloggen</a></li>
                                 </ul>
                             </li>
                         </ul>
