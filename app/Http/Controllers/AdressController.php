@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 use App\Address;
-
+use App\User;
+use App\Category;
 
 class AdressController extends Controller
 {
@@ -16,7 +17,13 @@ class AdressController extends Controller
      */
     public function index()
     {
-        //
+
+        $klantgegevens = Address::all();
+        $user_ids = $klantgegevens->pluck('user_id')->unique();
+        $gebruikers = User::all();
+
+        return view('admin.klanten.index', compact('gebruikers', 'klantgegevens', 'user_ids'));
+        
     }
 
     /**
@@ -90,6 +97,9 @@ class AdressController extends Controller
      */
     public function destroy($id)
     {
-        //
+         $user_id = User::findOrFail($id);
+         $user_id->delete();
+
+         return back()->with('success', 'Gebruiker successvol is verwijderd.');
     }
 }

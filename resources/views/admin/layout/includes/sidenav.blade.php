@@ -42,6 +42,17 @@
                     <li><a href="{{url('admin/orders')}}">Alle Bestellingen</a></li>
                 </ul>
             </li>
+
+             <li class="submenu">
+                <a href="#">
+                    <i class="glyphicon glyphicon-list"></i> Klanten
+                    <span class="caret pull-right"></span>
+                </a>
+                <!-- Sub menu -->
+                <ul>
+                    <li><a href="{{url('admin/klanten')}}">Klantgegevens inzien</a></li>
+                </ul>
+            </li>
             
         </ul>
     </div>

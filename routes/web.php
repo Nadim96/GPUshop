@@ -41,11 +41,14 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
 	Route::resource('product', 'ProductsController');
 	Route::resource('category', 'CategoriesController');
 	Route::get('orders/{type?}', 'OrderController@orders');
+	Route::get('klanten', 'AdressController@index');
+
 
 
 });
 
-
+Route::post('deleteuser/{userId?}', 'AdressController@destroy')->name('delete.user');
+Route::post('deleteorder/{orderId?}', 'OrderController@destroy')->name('delete.order');
 
 Route::group(['middleware' => 'auth'], function(){
 	Route::get('/shipping-info', 'CheckoutController@shipping')->name('checkout.shipping');

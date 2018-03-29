@@ -51,4 +51,12 @@ class OrderController extends Controller
 	    	return back()->with('success', 'Bezorging is gemarkeerd als in behandeling ');
 	    }
     }
+
+     public function destroy($id)
+    {
+         $order_id = Order::findOrFail($id);
+         $order_id->delete();
+
+         return back()->with('success', 'Bestelling is successvol verwijderd');
+    }
 }

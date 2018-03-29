@@ -8,6 +8,5 @@ class Address extends Model
 {
     protected $fillable = ['user_id', 'achternaam', 'straat', 'huisnummer', 'postcode', 'plaats', 'telefoonnummer'];
 
-    
 
 }
