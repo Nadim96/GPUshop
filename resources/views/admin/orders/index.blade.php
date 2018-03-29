@@ -61,6 +61,7 @@
 
 
 					@foreach($order->orderItems as $item)
+
     					<tr>
     						<td>{{$item->naam}}</td>
     						<td>{{$item->pivot->qty}}</td>

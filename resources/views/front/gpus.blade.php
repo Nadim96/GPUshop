@@ -31,7 +31,7 @@
 			@if($gpu->category_id == $category->id)
 
 			 <a href="{{route('gpu', $gpu->id)}}"><div class="bike" style="width:20%">				 
-				 <img style="min-height: 325px; max-height:325px" src="{{url('afbeeldingen', $gpu->afbeelding)}}" alt="" heigh/>
+				 <img style="min-height: 250px; max-height:250px" src="{{url('afbeeldingen', $gpu->afbeelding)}}" alt="" heigh/>
 			     <div class="bike-cost">
 						 <div class="bike-mdl">
 							 <h4><center>{{$gpu->naam}}</center></h4>
@@ -39,7 +39,7 @@
 						 <div class="bike-cart">	
 						 	<div>
 							 	</div>
-							 	<br><h3 style="text-align:right; margin-right: 5px;">€{{$gpu->prijs}}</h3>Excl. btw<br><br>
+							 	<br><h3 style="text-align:right; margin-right: 5px;">€{{$gpu->prijs}}</h3><br><br>
 
 							 <a class="buy" href="{{route('cart.edit',$gpu->id)}}">In winkelmand</a>
 						 </div><br>

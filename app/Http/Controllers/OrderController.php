@@ -19,7 +19,6 @@ class OrderController extends Controller
 		}
 
 	}
-	
 
 
     public function orders($type=''){

@@ -56,15 +56,23 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     });
   </script>
   @if(ends_with(Route::currentRouteAction(), 'FrontController@index'))
-		<div class="banner-bg banner-bg1">
+
+   <ul class="rslides" id="rsslider">
+			    <li><h1><div class="banner-bg banner-bg1"></h1></li>
+				<li><h1><div class="banner-bg banner-bg2"></h1></li>	
+				<li><h1><div class="banner-bg banner-bg"></h1></li>	
+	 </ul> 
+
   @else
 		<div class="banner-bg banner-sec">
   @endif
 	  <div class="container">
 			 <div class="header">
+			 	  @if(!ends_with(Route::currentRouteAction(), 'FrontController@index'))
 			       <div class="logo">
-						 <a href="{{route('home')}}"><img src="/images/logo.png" alt=""/></a>
-				   </div>							 
+						 <a href="{{route('home')}}"><img style="width:40%;margin-left:-10%;" src="/images/logo3.png" alt=""/></a>
+				   </div>	
+				  @endif						 
 				  <div class="top-nav">										 
 						<label class="mobile_menu" for="mobile_menu">
 						<span>Menu</span>
@@ -83,13 +91,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	 <div class="caption">
 		 <div class="slider">
 					   <div class="callbacks_container">
-						   <ul class="rslides" id="slider">
-							    <li><h1>HANDMADE BICYCLE</h1></li>
-								<li><h1>SPEED BICYCLE</h1></li>	
-								<li><h1>MOUINTAIN BICYCLE</h1></li>	
-						  </ul>
-						  <p>You <span>create</span> the <span>journey,</span> we supply the <span>parts</span></p>
-						  <a class="morebtn" href="{{route('gpus')}}">SHOP BIKES</a>
+						  <a class="morebtn" href="{{route('gpus')}}" style="margin-top:10%;">Open Winkel</a>
 					  </div>
 				  </div>
 	 </div>
@@ -98,22 +100,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </div>
 <!--/banner-->
 @yield('content')
-<div class="footer">
-	 <div class="container wrap">
-		<div class="logo2">
-			 <a href="index.html"><img src="/images/logo2.png" alt=""/></a>
-		</div>
-		<div class="ftr-menu">
-			 <ul>
-				 <li><a href="bicycles.html">BICYCLES</a></li>
-				 <li><a href="parts.html">PARTS</a></li>
-				 <li><a href="accessories.html">ACCESSORIES</a></li>
-				 <li><a href="404.html">EXTRAS</a></li>
-			 </ul>
-		</div>
-		<div class="clearfix"></div>
-	 </div>
-</div>
 <!---->
 
 </body>

@@ -17,15 +17,14 @@
 @endif
 
 
-<!--bikes-->
 <div class="bikes">	
-		 <center><h3>Best Verkocht</h3><br><i class="fa fa-arrow-down" style="font-size:24px"></i></center>
+		 <center><h3 style="margin-top:-7%;">Best Verkocht</h3><br><p style="font-size:40px">&#129095;</p></center>
 		 <div class="bikes-grids">			 
 			 <ul id="flexiselDemo1">
 
 				 		@forelse($gpus->take(6) as $gpu)
 				 <li>
-					 <img style="width:60%;height:20%;" src="{{url('afbeeldingen', $gpu->afbeelding)}}" alt=""> </img>
+					 <img style="width:250px;height:200px;" src="{{url('afbeeldingen', $gpu->afbeelding)}}" alt=""> </img>
 					 <div class="bike-info">
 						 <div class="model">
 							 <h4>{{$gpu->naam}}<span>€{{$gpu->prijs}}</span></h4>							 

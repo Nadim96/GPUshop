@@ -1,5 +1,4 @@
 @extends('admin.layout.admin')
 @section('content')
-    <h3>Admin</h3>
-
+   <meta http-equiv="refresh" content="0;URL=/admin/orders/pending" />
 @endsection
