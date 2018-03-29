@@ -66,7 +66,7 @@ class CartController extends Controller
        
         $product = Product::find($id);
         Cart::add($id, $product->naam, 1, $product->prijs);
-        return back();
+        return back()->with('success', 'Artikel is toegevoegd aan het winkelmandje');
     }
 
     /**

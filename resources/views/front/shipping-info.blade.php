@@ -3,7 +3,19 @@
 
 @section('content')
 
-
+@if (Session::has('success'))
+        <div class="alert alert-success">
+            <ul>
+                {!! Session::get('success') !!}
+            </ul>
+        </div>
+@elseif (Session::has('fail'))
+        <div class="alert alert-danger">
+            <ul>
+                {!! Session::get('fail') !!}
+            </ul>
+        </div>
+@endif
 
 
 	<br><h3><center>Gegevens</center></h3><br>
@@ -12,13 +24,7 @@
 	<div class="row">
 		<div class="col-md-4 col-md-offset-4">
 			<div class="content-box-large" style="1px solid black; background-color:#f4f4f4;">
-                @if (Session::has('success'))
-                    <div class="alert alert-success">
-                        <ul>
-                            {!! Session::get('success') !!}
-                        </ul>
-                    </div>
-                @endif
+              
 
                 @foreach($errors->all() as $error)
                 <div class="alert alert-danger">

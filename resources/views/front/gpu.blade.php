@@ -2,6 +2,21 @@
 
 @section('content')
 
+@if (Session::has('success'))
+        <div class="alert alert-success" style="text-align: center;">
+            <ul>
+                {!! Session::get('success') !!}
+            </ul>
+        </div>
+@elseif (Session::has('fail'))
+        <div class="alert alert-danger" style="text-align: center;">
+            <ul>
+                {!! Session::get('fail') !!}
+            </ul>
+        </div>
+@endif
+
+
 <div class="product">
 	 <div class="container">
 		 <div class="ctnt-bar cntnt">

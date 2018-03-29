@@ -2,7 +2,19 @@
 
 @section('content')
 
-
+@if (Session::has('success'))
+        <div class="alert alert-success" style="text-align: center;">
+            <ul>
+                {!! Session::get('success') !!}
+            </ul>
+        </div>
+@elseif (Session::has('fail'))
+        <div class="alert alert-danger" style="text-align: center;">
+            <ul>
+                {!! Session::get('fail') !!}
+            </ul>
+        </div>
+@endif
 
 
 <!--bikes-->
@@ -13,7 +25,7 @@
 
 				 		@forelse($gpus->take(6) as $gpu)
 				 <li>
-					 <img style="min-height: 325px; max-height:325px"src="{{url('afbeeldingen', $gpu->afbeelding)}}" alt=""/>
+					 <img style="width:60%;height:20%;" src="{{url('afbeeldingen', $gpu->afbeelding)}}" alt=""> </img>
 					 <div class="bike-info">
 						 <div class="model">
 							 <h4>{{$gpu->naam}}<span>€{{$gpu->prijs}}</span></h4>							 

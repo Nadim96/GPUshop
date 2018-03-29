@@ -4,12 +4,12 @@
 
 
  @if (Session::has('success'))
-                    <div class="alert alert-success">
-                        <ul>
-                            {!! Session::get('success') !!}
-                        </ul>
-                    </div>
-                @endif
+        <div class="alert alert-success">
+            <ul>
+                {!! Session::get('success') !!}
+            </ul>
+        </div>
+@endif
 
     <ul>
 

@@ -19,7 +19,8 @@ class FrontController extends Controller
     {
 
         $gpus = Product::all();
-    	return view('front.gpus',compact('gpus'));
+        $categories = Category::all();
+    	return view('front.gpus',compact('gpus', 'categories'));
     }
 
     public function gpu(Request $request, $productId)

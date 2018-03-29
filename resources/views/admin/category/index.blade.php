@@ -2,6 +2,21 @@
 
 @section('content')
 
+@if (Session::has('success'))
+        <div class="alert alert-success">
+            <ul>
+                {!! Session::get('success') !!}
+            </ul>
+        </div>
+@elseif (Session::has('fail'))
+        <div class="alert alert-danger">
+            <ul>
+                {!! Session::get('fail') !!}
+            </ul>
+        </div>
+@endif
+
+
 <div class="navbar">
         <a class="navbar-brand" href="/admin/category">Alle Producten</a>
         <ul class="nav navbar-nav">

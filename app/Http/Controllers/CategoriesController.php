@@ -40,8 +40,13 @@ class CategoriesController extends Controller
      */
     public function store(Request $request)
     {
-        Category::create($request->all());
-        return back();
+        $categories = Category::count();
+        if($categories >= 3){
+             return back()->with('fail', 'Maximaal 3 categorieën toegestaan, verwijder een bestaande categorie u een nieuwe wilt toevoegen');
+        }else{
+            Category::create($request->all());
+             return back()->with('success', 'Categorie successvol toegevoegd');
+        }
     }
 
     /**

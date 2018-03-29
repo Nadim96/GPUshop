@@ -69,7 +69,7 @@ class CheckoutController extends Controller
         Cart::destroy();
         return redirect('/cart')->with('success', 'Uw bestelling is geplaatst');
         }
-        return redirect('/cart')->with('success', 'Er is iets niet goed gegaan, probeer het opnieuw');
+        return redirect('/cart')->with('fail', 'Er is iets niet goed gegaan, probeer het opnieuw');
 
     }
 
