@@ -94,6 +94,9 @@ class CategoriesController extends Controller
      */
     public function destroy($id)
     {
-        //
+         $category_id = Category::findOrFail($id);
+         $category_id->delete();
+
+         return back()->with('success', 'Categorie is successvol verwijderd');
     }
 }

@@ -51,6 +51,10 @@ Route::post('deleteuser/{userId?}', 'AdressController@destroy')->name('delete.us
 Route::post('deleteorder/{orderId?}', 'OrderController@destroy')->name('delete.order');
 Route::post('deleteitem/{itemId?}', 'ProductsController@destroy')->name('delete.item');
 
+
+Route::post('deleteitem/{itemId?}', 'ProductsController@destroy')->name('delete.item');
+
+
 Route::group(['middleware' => 'auth'], function(){
 	Route::get('/shipping-info', 'CheckoutController@shipping')->name('checkout.shipping');
 });
