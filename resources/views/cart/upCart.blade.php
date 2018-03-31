@@ -1,4 +1,5 @@
 <?php use App\Product;?>
+<div id="updateDiv">
 <script>
 
 $(document).ready(function(){
@@ -29,7 +30,7 @@ $(document).ready(function(){
 
 <!--/banner-->
 
-<div class="cart">
+	<div class="cart">
 		 <div class="container">
 			 <div class="cart-top">
 				<a href="/">HOME ::</a>

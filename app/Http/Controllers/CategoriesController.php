@@ -97,6 +97,6 @@ class CategoriesController extends Controller
          $category_id = Category::findOrFail($id);
          $category_id->delete();
 
-         return back()->with('success', 'Categorie is successvol verwijderd');
+         return redirect('admin/category')->with('success', 'Categorie is successvol verwijderd');
     }
 }

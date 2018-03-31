@@ -48,7 +48,7 @@
     			<tr>
 
         @if(isset($order->user->name))
-		<center><h4>Bestelling gedaan door {{$order->user->name}}</h4></center>
+		<center><h4>Bestelling gedaan door {{ucfirst($order->user->name)}} ({{$order->user->email}})</h4></center>
         @else
         <center><h4>Gebruiker niet gevonden, deze is mogelijk verwijderd</h4></center>
 

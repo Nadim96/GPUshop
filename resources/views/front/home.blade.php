@@ -1,5 +1,6 @@
 @extends('layout.main')
 
+
 @section('content')
 
 @if (Session::has('success'))
@@ -16,9 +17,12 @@
         </div>
 @endif
 
+	<div class="bikes">
 
-<div class="bikes">	
-		 <center><h3 style="margin-top:-7%;">Best Verkocht</h3><br><p style="font-size:40px">&#129095;</p></center>
+		 <center><h3 style="margin-top:-2%;">Best Verkocht</h3><br><p style="font-size:40px">&#129095;</p></center>
+
+
+
 		 <div class="bikes-grids">			 
 			 <ul id="flexiselDemo1">
 

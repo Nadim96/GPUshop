@@ -81,7 +81,7 @@ class CartController extends Controller
         if($request->removeItem){
             $rowId = $request->rowId;
             Cart::remove($rowId);
-            return back();
+            return back()->with('success', 'Artikel is succesvol verwijderd uit het winkelmandje');
         }
         else{
 
@@ -108,6 +108,6 @@ class CartController extends Controller
     public function destroy($id)
     {
         Cart::destroy();
-        return back();
+        return back()->with('success', 'Alle artikelen zijn succesvol verwijderd uit het winkelmandje');
     }
 }

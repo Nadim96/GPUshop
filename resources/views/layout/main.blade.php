@@ -57,22 +57,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
   </script>
   @if(ends_with(Route::currentRouteAction(), 'FrontController@index'))
 
-   <ul class="rslides" id="rsslider">
-			    <li><h1><div class="banner-bg banner-bg1"></h1></li>
-				<li><h1><div class="banner-bg banner-bg2"></h1></li>	
-				<li><h1><div class="banner-bg banner-bg"></h1></li>	
-	 </ul> 
+			 <div class="banner-bg banner-bg1">
 
   @else
 		<div class="banner-bg banner-sec">
   @endif
 	  <div class="container">
 			 <div class="header">
-			 	  @if(!ends_with(Route::currentRouteAction(), 'FrontController@index'))
 			       <div class="logo">
 						 <a href="{{route('home')}}"><img style="width:40%;margin-left:-10%;" src="/images/logo3.png" alt=""/></a>
 				   </div>	
-				  @endif						 
 				  <div class="top-nav">										 
 						<label class="mobile_menu" for="mobile_menu">
 						<span>Menu</span>

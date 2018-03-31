@@ -85,7 +85,7 @@
 
                  <div class="form-group">
                     {{ Form::label('telefoonnummer', 'Telefoonnummer') }}
-                    {{ Form::text('telefoonnummer', $userAddress->telefoonnummer, array('class' => 'form-control','required'=>'', 'placeholder'=>'0123456789')) }}
+                    {{ Form::number('telefoonnummer', $userAddress->telefoonnummer, array('class' => 'form-control','required'=>'', 'placeholder'=>'0123456789')) }}
                 </div>
 
              

@@ -76,10 +76,10 @@
 							<div class="bike-type">
 							@foreach($categorie as $cat)
 							<p>Categorie  :: <a href="#" style="color:#337ab7;pointer-events: none; cursor: default">{{$cat->naam}}</a></p>
-							@endforeach
-							</div>
-							<h5>Beschrijving  ::</h5>
+							@endforeach<h5>Beschrijving  ::</h5>
 							<p class="desc">{{$product->beschrijving}}</p>
+							</div>
+							
 					 </div>
 					 <div class="clearfix"></div>				 	
 				  </div>
@@ -102,14 +102,15 @@
 							 <img src="{{url('afbeeldingen', $relatedProduct->afbeelding)}}" class="img-responsive " alt=""/>
 						 </div>
 						 <div class="prod1-desc">
-								<h5><a class="product_link" href="/bicycles.html">{{$relatedProduct->naam}}</a></h5>
+								<h5><a class="product_link" href="{{route('gpu', $relatedProduct->id)}}">{{$relatedProduct->naam}}</a></h5>
 								<p class="product_descr"> {{$relatedProduct->beschrijving}} </p>									
 						 </div>
 						 <div class="clearfix"></div>
 					 </div>
 					 <div class="product_price">
-							<span class="price-access">€ {{$relatedProduct->prijs}}</span>	<br><br>							
-							<a class="btn btn-default" href="{{route('gpu', $relatedProduct->id)}}"><span>Bekijk</span></a>
+							<center><span class="price-access"><h4>€ {{$relatedProduct->prijs}}</h4></span></center><br>							
+							<a class="btn btn-default" style="width:100%;" href="{{route('gpu', $relatedProduct->id)}}"><span>Bekijk</span></a>
+							<a class="btn btn-default" style="width:100%;" 	href="{{route('cart.edit',$relatedProduct->id)}}">In winkelmand</a>
 					 </div>
 
 

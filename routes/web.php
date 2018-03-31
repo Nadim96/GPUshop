@@ -43,8 +43,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
 	Route::get('orders/{type?}', 'OrderController@orders');
 	Route::get('klanten', 'AdressController@index');
 
-
-
 });
 
 Route::post('deleteuser/{userId?}', 'AdressController@destroy')->name('delete.user');
@@ -52,7 +50,6 @@ Route::post('deleteorder/{orderId?}', 'OrderController@destroy')->name('delete.o
 Route::post('deleteitem/{itemId?}', 'ProductsController@destroy')->name('delete.item');
 
 
-Route::post('deleteitem/{itemId?}', 'ProductsController@destroy')->name('delete.item');
 
 
 Route::group(['middleware' => 'auth'], function(){

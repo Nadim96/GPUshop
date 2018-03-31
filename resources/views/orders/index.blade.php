@@ -10,12 +10,12 @@
                 <a href="/">HOME ::</a>
              </div> 
 @forelse($orders as $order)
-<center><br><br>
+<center>
 
-   <ul>
+   <ul style="border:1px;background-color:#f7f7f7;;border-radius:5px;">
         <table class="table table-bordered" style="width:60%;background-color:white;">
 
-                <tr>
+                <tr><br>
         <h4>Bestelnummer #{{$order->id}}</h4>
         <h5>Totaal: €{{$order->total}} (Incl. BTW)</h5><br>
     
@@ -46,7 +46,7 @@
 
 
             </tr>
-        </table>
+        </table><br>
 
     </center>
 

@@ -58,7 +58,7 @@ class ProductsController extends Controller
         }
 
         Product::create($formInput);
-        return redirect()->route('admin.index');
+        return back()->with('success', 'Product is succesvol aangemaakt');
     }
 
     /**

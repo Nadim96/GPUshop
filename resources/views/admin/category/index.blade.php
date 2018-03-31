@@ -32,13 +32,13 @@
 
                 </li>
             @empty
-                <li>Geen categorieën gevonden</li>
+                <li style="margin-top:12%;">Geen categorieën gevonden</li>
             @endforelse
                 @endif
 
         </ul>
          <a class="btn btn-primary pull-right navbar-right" data-toggle="modal" href="#category">Voeg categorie toe</a>
-    <div class="modal fade" id="category">
+    <div class="modal fade" id="category"  style="margin-top:12%;">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -49,7 +49,7 @@
                 <div class="modal-body">
                     <div class="form-group">
                         {{ Form::label('naam', 'Naam') }}
-                        {{ Form::text('naam', null, array('class' => 'form-control', 'required' => 'required')) }}
+                        {{ Form::text('naam', null, array('class' => 'form-control', 'required' => 'required',  'autofocus')) }}
                     </div>
 
 
